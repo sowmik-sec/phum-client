@@ -3,7 +3,7 @@ import App from "../App";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AdminLayout from "../components/layout/AdminLayout";
-import adminPaths from "./admin.routes";
+import { adminRoutes } from "./admin.routes";
 
 const router = createBrowserRouter([
   {
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
   {
     path: "/admin",
     element: <AdminLayout />,
-    children: adminPaths,
+    children: adminRoutes,
   },
   {
     path: "/faculty",
