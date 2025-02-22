@@ -45,10 +45,10 @@ const MainLayout = () => {
             height: "4rem",
             display: "flex",
             justifyContent: "center",
-            justifyItems: "center",
+            alignItems: "center",
           }}
         >
-          <h1 style={{ height: "20px" }}>PH Uni</h1>
+          <h1>PH Uni</h1>
         </div>
         <Menu
           theme="dark"
