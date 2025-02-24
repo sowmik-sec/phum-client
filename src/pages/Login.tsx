@@ -26,6 +26,7 @@ const Login = () => {
       dispatch(setUser({ user, token: res.data.accessToken }));
       navigate(`/${user.role}/dashboard`);
       toast.success("Logged In", { id: toastId, duration: 2000 });
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       toast.error("Something went wrong", { id: toastId, duration: 2000 });
     }
