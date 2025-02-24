@@ -1,5 +1,5 @@
 import { Button } from "antd";
-import { FieldValues, useForm } from "react-hook-form";
+import { FieldValues, useForm, useFormContext } from "react-hook-form";
 import { useLoginMutation } from "../redux/features/auth/authApi";
 import { useAppDispatch } from "../redux/hook";
 import { setUser, TUser } from "../redux/features/auth/authSlice";
@@ -7,10 +7,11 @@ import { verifyToken } from "../utils/verifyToken";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import PHForm from "../components/form/PHForm";
+import PHInput from "../components/form/PHInput";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { register } = useForm();
+  // const { register } = useForm();
   const [login, { error }] = useLoginMutation();
   const dispatch = useAppDispatch();
   console.log(error);
@@ -36,12 +37,12 @@ const Login = () => {
     <div>
       <PHForm onSubmit={onSubmit}>
         <div>
-          <label htmlFor="id">ID:</label>
-          <input type="text" id="id" {...register("id")} />
+          {/* <label htmlFor="id">ID:</label> */}
+          <PHInput type={"text"} name={"id"} label={"ID"} />
         </div>
         <div>
-          <label htmlFor="password">Password:</label>
-          <input type="text" id="password" {...register("password")} />
+          {/* <label htmlFor="password">Password:</label> */}
+          <PHInput type={"password"} name={"password"} label={"Password"} />
         </div>
         <Button htmlType="submit">Login</Button>
       </PHForm>
