@@ -1,9 +1,9 @@
 import {
   BaseQueryApi,
   BaseQueryFn,
-  createApi,
   DefinitionType,
   FetchArgs,
+  createApi,
   fetchBaseQuery,
 } from "@reduxjs/toolkit/query/react";
 import { RootState } from "../store";
@@ -29,11 +29,13 @@ const baseQueryWithRefreshToken: BaseQueryFn<
 > = async (args, api, extraOptions): Promise<any> => {
   let result = await baseQuery(args, api, extraOptions);
   if (result?.error?.status === 404) {
-    toast.error(result?.error?.data?.message);
+    toast.error(result.error.data.message);
   }
   if (result?.error?.status === 401) {
-    // send refresh token
-    const res = await fetch(`http://localhost:5000/auth/refresh-token`, {
+    //* Send Refresh
+    console.log("Sending refresh token");
+
+    const res = await fetch("http://localhost:5000/api/v1/auth/refresh-token", {
       method: "POST",
       credentials: "include",
     });
