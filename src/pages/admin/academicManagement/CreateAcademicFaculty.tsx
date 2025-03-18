@@ -4,12 +4,12 @@ import PHForm from "../../../components/form/PHForm";
 import PHSelect from "../../../components/form/PHSelect";
 import { facultyOptions } from "../../../constants/faculty";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { academicFacultySchema } from "../../../schemas/academicFaculty.schema";
 import { FieldValues, SubmitHandler } from "react-hook-form";
 import { useAddAcademicFacultyMutation } from "../../../redux/features/admin/academicManagement.api";
 import { toast } from "sonner";
 import { TResponseRedux } from "../../../types";
 import { TAcademicFaculty } from "../../../types/academicManagement.type";
+import { academicFacultySchema } from "../../../schemas/academicManagement.schema";
 
 const CreateAcademicFaculty = () => {
   const [createAcademicFaculty] = useAddAcademicFacultyMutation();
