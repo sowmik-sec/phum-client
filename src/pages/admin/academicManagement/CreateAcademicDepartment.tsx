@@ -46,7 +46,7 @@ const CreateAcademicDepartment = () => {
       if (res.error) {
         toast.error(res.error.data.message, { id: toastId });
       } else {
-        toast.success("Semester created", { id: toastId });
+        toast.success("Academic Department created", { id: toastId });
       }
     } catch (err) {
       toast.error("Something went wrong", { id: toastId });
