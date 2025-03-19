@@ -21,7 +21,7 @@ const studentDefaultValues = {
   },
   gender: "male",
 
-  bloogGroup: "A+",
+  bloodGroup: "A+",
 
   contactNo: "1235678",
   emergencyContactNo: "987-654-3210",
@@ -44,8 +44,8 @@ const studentDefaultValues = {
     address: "789 Pine St, Villageton",
   },
 
-  admissionSemester: "65bb60ebf71fdd1add63b1c0",
-  academicDepartment: "65b4acae3dc8d4f3ad83e416",
+  admissionSemester: "67b411757940961d9b744671",
+  academicDepartment: "67d95b8e4f3909216477816e",
 };
 
 const CreateStudent = () => {
@@ -111,7 +111,7 @@ const CreateStudent = () => {
             <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
               <PHSelect
                 options={bloodGroupOptions}
-                name="bloogGroup"
+                name="bloodGroup"
                 label="Blood group"
               />
             </Col>
