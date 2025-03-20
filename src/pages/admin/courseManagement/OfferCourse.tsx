@@ -2,17 +2,18 @@ import { Button, Col, Flex } from "antd";
 import PHForm from "../../../components/form/PHForm";
 
 import PHInput from "../../../components/form/PHInput";
-import { useGetAcademicFacultiesQuery } from "../../../redux/features/admin/academicManagement.api";
 import { useState } from "react";
 import { FieldValues, SubmitHandler } from "react-hook-form";
 import PHSelectWithWatch from "../../../components/form/PHSelectWithWatch";
+import { useGetAllAcademicFacultiesQuery } from "../../../redux/features/admin/academicManagement.api";
 
 const OfferCourse = () => {
   const [id, setId] = useState("");
 
   console.log("Inside parent component", id);
 
-  const { data: academicFacultyData } = useGetAcademicFacultiesQuery(undefined);
+  const { data: academicFacultyData } =
+    useGetAllAcademicFacultiesQuery(undefined);
 
   const academicSemesterOptions = academicFacultyData?.data?.map((item) => ({
     value: item._id,
